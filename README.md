@@ -11,7 +11,7 @@
 
 <p>
   <a href="https://vizlearn.app"><img src="readme/card-vizlearn.svg" width="880" alt="VizLearn — a debugger you can actually read. 70+ lessons; code, canvas and logs move together." /></a>
-  <a href="https://kotoplanet.com"><img src="readme/card-kotoplanet.svg" width="880" alt="KotoPlanet — formerly KanaPlanet; it outgrew the kana. N5–N1 content, 13,000+ items, 20,000+ audio clips, AI conversations, and MCP." /></a>
+  <a href="https://kotoplanet.com"><img src="readme/card-kotoplanet.svg" width="880" alt="KotoPlanet — the full N5–N1 library ships today. 13,000+ items, 20,000+ audio clips, AI conversations, and MCP." /></a>
   <a href="https://codepin.aouos.com"><img src="readme/card-codepin.svg" width="880" alt="CodePin — QR codes that live on the Lock Screen. iOS, Live Activity, never leaves your device." /></a>
   <a href="https://aouo.ai"><img src="readme/card-aouo.svg" width="880" alt="AOUO — local-first agent apps, one .aouo pack each. Pre-alpha: skills, memory, schedules, its own UI." /></a>
 </p>

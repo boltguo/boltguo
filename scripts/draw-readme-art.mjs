@@ -500,7 +500,7 @@ const projects = [
   {
     slug: 'kotoplanet',
     name: 'KotoPlanet',
-    line: 'formerly KanaPlanet — it outgrew the kana',
+    line: 'the full N5–N1 library ships today',
     meta: 'N5–N1 · 13K+ items · 20K+ audio · AI + MCP',
     accent: 'coral',
   },

@@ -22,7 +22,6 @@ const MINI_ACCENT = ['#CA8A04', '#DB2777', '#059669', '#DC2626', '#2563EB'];
         const {
           id,
           title,
-          tagline,
           description,
           highlights,
           details,
@@ -30,7 +29,6 @@ const MINI_ACCENT = ['#CA8A04', '#DB2777', '#059669', '#DC2626', '#2563EB'];
           link,
           proof,
           ctaNote,
-          afterword,
         } = project;
         const flip = index % 2 === 1;
         const accent = FEATURED_ACCENT[index % FEATURED_ACCENT.length];
@@ -44,7 +42,6 @@ const MINI_ACCENT = ['#CA8A04', '#DB2777', '#059669', '#DC2626', '#2563EB'];
                   ))}
                 </div>
                 <h3 class="project-card__title">{title}</h3>
-                {tagline && <p class="project-card__tagline">({tagline})</p>}
                 <p class="project-card__desc">{description}</p>
                 {highlights && (
                   <ul class="project-card__highlights">
@@ -69,9 +66,6 @@ const MINI_ACCENT = ['#CA8A04', '#DB2777', '#059669', '#DC2626', '#2563EB'];
                     <span class="project-card__cta-note">{ctaNote}</span>
                   )}
                 </div>
-                {afterword && (
-                  <p class="project-card__afterword">{afterword}</p>
-                )}
               </div>
 
               <div class="viz-feature-art">
