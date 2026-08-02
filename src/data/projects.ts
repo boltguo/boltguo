@@ -1,7 +1,13 @@
 export type Project = {
   id: string;
   title: string;
+  /** A short note shown directly beneath the project title */
+  tagline?: string;
   description: string;
+  /** Scannable product capabilities shown on featured cards */
+  highlights?: readonly string[];
+  /** Longer implementation context shown after the highlights */
+  details?: string;
   tech: readonly string[];
   link: string;
   category: 'product' | 'tool' | 'learning';
@@ -11,6 +17,10 @@ export type Project = {
   footerOnly?: boolean;
   /** One concrete proof point, shown on featured cards */
   proof?: string;
+  /** Supporting copy displayed beside the primary call to action */
+  ctaNote?: string;
+  /** A final aside shown after the primary call to action */
+  afterword?: string;
 };
 
 export const projects: readonly Project[] = [
@@ -28,15 +38,28 @@ export const projects: readonly Project[] = [
   },
   {
     id: '02',
-    title: 'KanaPlanet',
+    title: 'KotoPlanet',
+    tagline: 'formerly KanaPlanet — it outgrew the kana',
     description:
-      "I couldn't find a Japanese-learning tool that felt right, so I built the whole thing: CSV as the content source of truth, TTS audio, KanjiVG stroke order, an SRS review engine, pronunciation scoring, and AI conversations for real-life situations.",
-    tech: ['Expo', 'Cloudflare', 'Local-first'],
-    link: 'https://kanaplanet.aouos.com/',
+      "I couldn't find a Japanese-learning tool that felt right, so I built the whole thing.",
+    highlights: [
+      'The full N5–N1 content library ships today, not as a roadmap: 13,000+ structured items and 20,000+ self-produced TTS audio clips, compiled from CSV sources into versioned seeds',
+      "An SRS engine plans every day — open it, and today's reviews and new lessons are already laid out",
+      'Reading and listening split sentence by sentence, every sentence tokenized, playable, slowable, shadowable; pronunciation scored word by word; handwriting judged stroke by stroke against KanjiVG',
+      'AI scenario conversations for actually speaking, plus N5 mock exams as a checkpoint',
+      'An MCP server with OAuth: ChatGPT or Claude signs in, reads the real review queue, and writes finished practice back into the same learning record',
+    ],
+    details:
+      "Local-first: everything works offline and without an account; one Expo monorepo compiles the same logic into a native iOS app and a web app on Cloudflare's edge, with sync only when you sign in.",
+    tech: ['N5–N1', 'Expo', 'OAuth + MCP', 'Local-first'],
+    link: 'https://kotoplanet.com/',
     category: 'product',
     featured: true,
     proof:
-      "It doesn't promise a test score. I built it to help me actually use Japanese. One Expo monorepo compiles the same application logic for two targets: a native iOS app and a web app deployed to Cloudflare's edge. A local-first data layer keeps them in sync.",
+      "It doesn't promise a test score. I built it to help me actually use Japanese.",
+    ctaNote: 'Free to use in the browser.',
+    afterword:
+      "Full disclosure: the content library runs N5 through N1. I still haven't finished the kana.",
   },
   {
     id: '04',

@@ -286,7 +286,7 @@ const glyphs = {
     );
   },
   // the kana chart, six cells with today's one filled in
-  kanaplanet: (seed) =>
+  kotoplanet: (seed) =>
     Array.from({ length: 6 }, (_, i) => {
       const x = 9 + (i % 3) * 45;
       const y = 8 + Math.floor(i / 3) * 34;
@@ -498,10 +498,10 @@ const projects = [
     accent: 'blue',
   },
   {
-    slug: 'kanaplanet',
-    name: 'KanaPlanet',
-    line: 'the Japanese tutor I wanted but never found',
-    meta: 'SRS · stroke order · speech scoring · web + iOS',
+    slug: 'kotoplanet',
+    name: 'KotoPlanet',
+    line: 'formerly KanaPlanet — it outgrew the kana',
+    meta: 'N5–N1 · 13K+ items · 20K+ audio · AI + MCP',
     accent: 'coral',
   },
   {

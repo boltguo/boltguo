@@ -18,7 +18,20 @@ const MINI_ACCENT = ['#CA8A04', '#DB2777', '#059669', '#DC2626', '#2563EB'];
 
   <ul class="project-cards">
     {
-      featured.map(({ id, title, description, tech, link, proof }, index) => {
+      featured.map((project, index) => {
+        const {
+          id,
+          title,
+          tagline,
+          description,
+          highlights,
+          details,
+          tech,
+          link,
+          proof,
+          ctaNote,
+          afterword,
+        } = project;
         const flip = index % 2 === 1;
         const accent = FEATURED_ACCENT[index % FEATURED_ACCENT.length];
         return (
@@ -31,17 +44,34 @@ const MINI_ACCENT = ['#CA8A04', '#DB2777', '#059669', '#DC2626', '#2563EB'];
                   ))}
                 </div>
                 <h3 class="project-card__title">{title}</h3>
+                {tagline && <p class="project-card__tagline">({tagline})</p>}
                 <p class="project-card__desc">{description}</p>
+                {highlights && (
+                  <ul class="project-card__highlights">
+                    {highlights.map((highlight) => (
+                      <li>{highlight}</li>
+                    ))}
+                  </ul>
+                )}
+                {details && <p class="project-card__details">{details}</p>}
                 {proof && <p class="project-card__proof">{proof}</p>}
-                <a
-                  class="band-btn project-card__cta"
-                  href={link}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Open {title}
-                  <Icon name="arrow-up-right" size={18} />
-                </a>
+                <div class="project-card__action">
+                  <a
+                    class="band-btn project-card__cta"
+                    href={link}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Open {title}
+                    <Icon name="arrow-up-right" size={18} />
+                  </a>
+                  {ctaNote && (
+                    <span class="project-card__cta-note">{ctaNote}</span>
+                  )}
+                </div>
+                {afterword && (
+                  <p class="project-card__afterword">{afterword}</p>
+                )}
               </div>
 
               <div class="viz-feature-art">

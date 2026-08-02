@@ -502,12 +502,43 @@ button {
   line-height: 1.08;
 }
 
+.project-card__tagline {
+  margin-top: 0.35rem;
+  color: var(--card-accent, var(--ink));
+  font-family: var(--font-canvas);
+  font-size: 0.95rem;
+  font-style: italic;
+  font-weight: 700;
+}
+
 .project-card__desc {
   margin-top: 0.8rem;
   max-width: 34rem;
   color: rgba(74, 65, 56, 0.82);
   font-size: 1rem;
   line-height: 1.65;
+}
+
+.project-card__highlights {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+  color: rgba(74, 65, 56, 0.82);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.project-card__highlights li::marker {
+  color: var(--card-accent, var(--ink));
+}
+
+.project-card__details {
+  margin-top: 1rem;
+  max-width: 38rem;
+  color: rgba(74, 65, 56, 0.82);
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 .project-card__proof {
@@ -519,7 +550,31 @@ button {
 }
 
 .project-card__cta {
+  flex-shrink: 0;
+}
+
+.project-card__action {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem 1rem;
   margin-top: 1.7rem;
+}
+
+.project-card__cta-note {
+  color: rgba(74, 65, 56, 0.72);
+  font-size: 0.9rem;
+}
+
+.project-card__afterword {
+  margin-top: 1rem;
+  padding-left: 0.85rem;
+  border-left: 3px solid var(--card-accent, var(--ink));
+  color: rgba(74, 65, 56, 0.72);
+  font-family: var(--font-canvas);
+  font-size: 0.9rem;
+  font-style: italic;
+  line-height: 1.5;
 }
 
 /* compact shelf under the two featured cards */

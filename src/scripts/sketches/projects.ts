@@ -149,8 +149,8 @@ const drawVizLearnSketch = (canvas: HTMLCanvasElement) => {
   return env;
 };
 
-// KanaPlanet: the daily learning route and kana practice grid
-const drawKanaPlanetSketch = (canvas: HTMLCanvasElement) => {
+// KotoPlanet: the daily learning route and kana practice grid
+const drawKotoPlanetSketch = (canvas: HTMLCanvasElement) => {
   const env = prepareCanvas(canvas, 560, 320);
   if (!env) return null;
 
@@ -188,7 +188,7 @@ const drawKanaPlanetSketch = (canvas: HTMLCanvasElement) => {
     });
   });
 
-  // Compact left navigation with the KanaPlanet mark.
+  // Compact left navigation with the KotoPlanet mark.
   rect(env, {
     x: 30,
     y: 66,
@@ -869,7 +869,7 @@ const projectSketches: Record<
   (canvas: HTMLCanvasElement) => DrawEnv | null
 > = {
   '01': drawVizLearnSketch,
-  '02': drawKanaPlanetSketch,
+  '02': drawKotoPlanetSketch,
   learn: drawLearnSketch,
   ship: drawShipSketch,
 };
