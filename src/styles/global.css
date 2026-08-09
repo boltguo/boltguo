@@ -223,24 +223,9 @@ button {
   pointer-events: none;
 }
 
-.hero-miku-art {
-  animation: hero-character-bob 3.2s ease-in-out infinite;
-}
-
 .hero-anya-art {
-  animation: hero-character-bob 3.6s 0.45s ease-in-out infinite reverse;
   mask-image: none;
   -webkit-mask-image: none;
-}
-
-@keyframes hero-character-bob {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-2.5px);
-  }
 }
 
 .hero-sketch-pad {
@@ -250,11 +235,25 @@ button {
   rotate: 0.65deg;
 }
 
-.hero-doodle {
-  position: absolute;
+.hero-tech-marks {
   display: none;
-  opacity: 0.9;
+}
+
+.hero-tech-mark {
+  --tool-color: var(--ink);
+  --tool-size: 2em;
+  --tool-tilt: 0deg;
+
+  position: absolute;
+  z-index: 2;
+  width: var(--tool-size);
+  height: var(--tool-size);
+  overflow: visible;
+  color: var(--tool-color);
+  fill: currentColor;
+  filter: url(#rough-ink);
   pointer-events: none;
+  rotate: var(--tool-tilt);
 }
 
 .hero-scroll-cue {
@@ -273,21 +272,6 @@ button {
   text-decoration: none;
 }
 
-.hero-scroll-cue svg {
-  animation: hero-cue-bob 1.7s ease-in-out infinite;
-}
-
-@keyframes hero-cue-bob {
-  0%,
-  100% {
-    translate: 0 0;
-  }
-  50% {
-    translate: 0 6px;
-  }
-}
-
-/* scattered around the centered copy; sized in em so they scale with the hero */
 @media (min-width: 768px) {
   .hero-sketch-pad {
     margin-top: -5em;
@@ -298,71 +282,48 @@ button {
     left: -25%;
   }
 
-  .hero-doodle {
+  .hero-tech-marks {
     display: block;
   }
 
-  .hero-doodle--arc-pair {
-    top: 19%;
-    left: 19%;
-    width: 2.65em;
-    height: 1.25em;
-    rotate: 8deg;
-  }
-
-  .hero-doodle--wonky-rect {
-    top: 24%;
-    right: 18%;
-    width: 1.5em;
-    height: 1.875em;
-    rotate: -7deg;
-  }
-
-  .hero-doodle--bean {
-    bottom: 12%;
-    left: 13%;
-    width: 1.125em;
-    height: 1.125em;
-    rotate: 18deg;
-  }
-
-  .hero-doodle--ring {
-    top: 10%;
-    left: 7%;
-    width: 1.25em;
-    height: 1.25em;
-  }
-
-  .hero-doodle--smile {
-    top: 52%;
-    left: 5%;
-    width: 2.125em;
-    height: 1.125em;
-    rotate: -5deg;
-  }
-
-  .hero-doodle--zigzag {
+  .hero-tech-mark--vue {
     top: 8%;
+    left: 7%;
+  }
+
+  .hero-tech-mark--astro {
+    top: 7%;
     right: 8%;
-    width: 2.625em;
-    height: 1.25em;
-    rotate: 4deg;
   }
 
-  .hero-doodle--blue-stroke {
-    top: 48%;
-    right: 5%;
-    width: 2.125em;
-    height: 1em;
-    rotate: 9deg;
+  .hero-tech-mark--tailwind {
+    top: 19%;
+    left: 17%;
   }
 
-  .hero-doodle--coral-ring {
-    right: 13%;
+  .hero-tech-mark--github {
+    top: 24%;
+    right: 17%;
+  }
+
+  .hero-tech-mark--figma {
+    top: 50%;
+    left: 4%;
+  }
+
+  .hero-tech-mark--vite {
+    top: 47%;
+    right: 4%;
+  }
+
+  .hero-tech-mark--javascript {
     bottom: 9%;
-    width: 1.0625em;
-    height: 1.0625em;
-    rotate: 12deg;
+    left: 12%;
+  }
+
+  .hero-tech-mark--git {
+    right: 13%;
+    bottom: 8%;
   }
 }
 
