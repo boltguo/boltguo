@@ -140,4 +140,20 @@ export const projectCategories = [
 export const socials = [
   { name: 'GitHub', icon: 'github', href: 'https://github.com/boltguo' },
   { name: 'X', icon: 'x', href: 'https://x.com/boltguo' },
+  {
+    name: 'LinkedIn',
+    icon: 'linkedin',
+    href: 'https://www.linkedin.com/in/boltguo/',
+  },
+  { name: 'YouTube', icon: 'youtube', href: 'https://youtube.com/@boltguo' },
+  {
+    name: 'Instagram',
+    icon: 'instagram',
+    href: 'https://instagram.com/boltguo',
+  },
+  {
+    name: 'Bilibili',
+    icon: 'bilibili',
+    href: 'https://space.bilibili.com/48999569',
+  },
 ] as const;
