@@ -24,7 +24,7 @@ export const projects: readonly Project[] = [
     id: '01',
     title: 'VizLearn',
     description:
-      'Change an input and step through what happens next. The code, visualization, and execution log stay in sync, so the result never feels like a magic trick.',
+      'VizLearn is an interactive way to learn algorithms, AI, and computer science. Change the input and step through each operation while the code, visualization, and execution log stay in sync.',
     tech: ['Algorithms', 'AI & CS'],
     link: 'https://vizlearn.app/',
     category: 'product',
@@ -38,17 +38,17 @@ export const projects: readonly Project[] = [
     description:
       "I couldn't find a Japanese-learning tool that felt right, so I built one.",
     highlights: [
-      "An SRS engine lays out today's reviews and new lessons.",
-      'Sentence-level reading, listening, playback, slow mode, and shadowing; word-level pronunciation and KanjiVG stroke scoring.',
-      'AI speaking scenarios, N5 mock exams, and an OAuth MCP that lets ChatGPT or Claude read the live review queue and update the same learning record.',
+      'Spaced repetition schedules reviews and new lessons.',
+      'Practice reading, listening, shadowing, pronunciation, and kanji strokes in the same app.',
+      'AI speaking scenarios, N5 mock exams, and an OAuth MCP connect ChatGPT and Claude to the same learning record.',
     ],
     details:
-      'Local-first and offline by default. One Expo monorepo powers native iOS and the Cloudflare web app; sign-in adds sync. CSV content compiles into versioned seeds.',
+      'The app works offline and stores data locally. One Expo monorepo powers iOS and the Cloudflare web app; signing in adds sync. CSV content compiles into versioned seeds.',
     tech: ['N5–N1', 'Expo', 'OAuth + MCP', 'Local-first'],
     link: 'https://kotoplanet.com/',
     category: 'product',
     featured: true,
-    proof: 'Built to help me use Japanese, not promise a test score.',
+    proof: 'I built it to help me use Japanese, not just study for a test.',
     ctaNote: 'Free in your browser.',
   },
   {
@@ -72,6 +72,15 @@ export const projects: readonly Project[] = [
     footerOnly: true,
   },
   {
+    id: '11',
+    title: 'Luti',
+    description:
+      'Luti lets MCP-compatible AI clients work inside a Mac project you approve. It can read and edit code, run tests, use the browser and Mac apps, and share project memory, all under explicit permissions.',
+    tech: ['macOS 14+', 'MCP', 'Open source'],
+    link: 'https://luti.aouos.com/',
+    category: 'product',
+  },
+  {
     id: '06',
     title: 'Watermark Remover',
     description:
@@ -84,7 +93,7 @@ export const projects: readonly Project[] = [
     id: '07',
     title: 'CodePin',
     description:
-      'Make a QR code or barcode, or scan one with the camera or from a photo. Keep it in history, pin it to the Lock Screen or Dynamic Island, and export it as HD or SVG. Pro sync uses your private iCloud database.',
+      'Create or scan QR codes and barcodes, keep them in history, pin them to the Lock Screen or Dynamic Island, and export them as HD images or SVG. Pro sync uses your private iCloud database.',
     tech: ['QR & Barcodes', 'Local-first', 'SVG & iCloud'],
     link: 'https://codepin.aouos.com/',
     category: 'product',
@@ -97,6 +106,7 @@ export const projects: readonly Project[] = [
     tech: ['Agent Runtime', 'Local-first'],
     link: 'https://aouo.ai/',
     category: 'tool',
+    footerOnly: true,
   },
   {
     id: '08',
