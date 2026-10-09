@@ -1,36 +1,9 @@
-<!-- No badge wall here. The projects are the graph. -->
-<!-- readme/*.svg are drawn by scripts/draw-readme-art.mjs — run `pnpm readme:art` to redraw. -->
+# 👋 I'm Bolt Guo.
 
-<p align="center">
-  <a href="https://aouos.com">
-    <img src="readme/banner.svg" width="880" alt="Hello, I'm Bolt Guo. I don't take notes. I build them. Frontend developer and independent builder." />
-  </a>
-</p>
+I'm a software developer who likes figuring out how things work and building things I want to use. I built [VizLearn](https://vizlearn.app/) to make complex concepts easier to understand.
 
-## On the workbench
+My background is in frontend development. I mostly work with **TypeScript, React, and Vue**. Lately, I've been exploring native apps, local-first software, and AI agents.
 
-<p>
-  <a href="https://vizlearn.app"><img src="readme/card-vizlearn.svg" width="880" alt="VizLearn — a debugger you can actually read. 70+ lessons; code, canvas and logs move together." /></a>
-  <a href="https://kotoplanet.com"><img src="readme/card-kotoplanet.svg" width="880" alt="KotoPlanet — the full N5–N1 library ships today. 13,000+ items, 20,000+ audio clips, AI conversations, and MCP." /></a>
-  <a href="https://codepin.aouos.com"><img src="readme/card-codepin.svg" width="880" alt="CodePin — QR codes that live on the Lock Screen. iOS, Live Activity, never leaves your device." /></a>
-  <a href="https://aouo.ai"><img src="readme/card-aouo.svg" width="880" alt="AOUO — local-first agent apps, one .aouo pack each. Pre-alpha: skills, memory, schedules, its own UI." /></a>
-</p>
+Away from the keyboard, I'm usually playing 🎮 games, watching anime, or adding another song to a 🎵 playlist that's already too long.
 
-## Usually within reach
-
-<p align="center">
-  <img src="readme/stack.svg" width="880" alt="TypeScript, React, Vue, Astro, Expo, Cloudflare, SQLite, Go, iOS, local-first" />
-</p>
-
-<details>
-  <summary><b>Open the bottom drawer</b></summary>
-  <br />
-  Things that never earned their maintenance — deleted, no ceremony.<br />
-  Things I rebuilt instead of reading about — most of this page.<br />
-  Tabs still open from one idea last spring — please don't ask.<br />
-  Away from the keyboard — games, anime, and making an already-long playlist even longer.
-</details>
-
-<p align="center">
-  <img src="readme/footer.svg" width="560" alt="A small annoyance has entered the workbench. Waku waku." />
-</p>
+Have something in mind? Say hello at ✉️ [**hello@aouos.com**](mailto:hello@aouos.com).

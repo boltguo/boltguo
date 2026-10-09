@@ -1,124 +1,79 @@
 ---
 import Icon from '../Icon.astro';
+import BrandIcon from '../BrandIcon.astro';
+import SvgIcon from '../SvgIcon.astro';
 import { projects } from '../../data/projects';
 
-const featured = projects.filter((p) => p.featured);
-const rest = projects.filter((p) => !p.featured && !p.footerOnly);
-
-const TILE_ROTATION = [1.1, -1.3];
-const FEATURED_ACCENT = ['#0891B2', '#B83A2D'];
-const MINI_ACCENT = ['#CA8A04', '#DB2777', '#059669', '#DC2626', '#2563EB'];
+const sections = [
+  {
+    id: 'projects',
+    title: 'Projects',
+    items: projects.filter((project) => !project.footerOnly),
+  },
+  {
+    id: 'more',
+    title: 'More',
+    items: projects.filter((project) => project.footerOnly),
+  },
+];
 ---
 
-<section class="viz-feature-section">
-  <div class="mb-14 max-w-2xl">
-    <p class="viz-kicker">Projects</p>
-    <h2 class="viz-feature-heading">Selected projects.</h2>
-  </div>
-
-  <ul class="project-cards">
-    {
-      featured.map((project, index) => {
-        const {
-          id,
-          title,
-          description,
-          highlights,
-          details,
-          tech,
-          link,
-          proof,
-          ctaNote,
-        } = project;
-        const flip = index % 2 === 1;
-        const accent = FEATURED_ACCENT[index % FEATURED_ACCENT.length];
-        return (
-          <li class="project-card" style={`--card-accent:${accent}`}>
-            <div class={`project-card__row ${flip ? 'is-flip' : ''}`}>
-              <div class="project-card__info">
-                <div class="project-card__tags">
-                  {tech.map((t) => (
-                    <span class="project-tag">{t}</span>
-                  ))}
-                </div>
-                <h3 class="project-card__title">{title}</h3>
-                <p class="project-card__desc">{description}</p>
-                {highlights && (
-                  <ul class="project-card__highlights">
-                    {highlights.map((highlight) => (
-                      <li>{highlight}</li>
-                    ))}
-                  </ul>
-                )}
-                {details && <p class="project-card__details">{details}</p>}
-                {proof && <p class="project-card__proof">{proof}</p>}
-                <div class="project-card__action">
-                  <a
-                    class="band-btn project-card__cta"
-                    href={link}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Open {title}
-                    <Icon name="arrow-up-right" size={18} />
-                  </a>
-                  {ctaNote && (
-                    <span class="project-card__cta-note">{ctaNote}</span>
-                  )}
-                </div>
-              </div>
-
-              <div class="viz-feature-art">
-                <div
-                  class="viz-sketch-pad"
-                  style={`rotate: ${TILE_ROTATION[index % TILE_ROTATION.length]}deg`}
-                >
-                  <canvas
-                    class="sketch-canvas"
-                    data-sketch="project"
-                    data-project={id}
-                    width="560"
-                    height="320"
-                    aria-hidden="true"
+{
+  sections.map(({ id, title, items }) => (
+    <section class="project-section" id={id} aria-labelledby={`${id}-title`}>
+      <h2 id={`${id}-title`}>{title}</h2>
+      <ul class="project-list">
+        {items.map((project) => (
+          <li>
+            <a
+              class="project-link"
+              href={project.link}
+              aria-label={`${project.title}: ${project.summary}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span class="project-logo" aria-hidden="true">
+                {project.iconSprite ? (
+                  <span
+                    class={`project-sprite project-sprite--${project.iconSprite}`}
                   />
-                </div>
-              </div>
-            </div>
+                ) : project.icon ? (
+                  <SvgIcon
+                    name={project.icon}
+                    size={16}
+                    viewBox={
+                      project.icon === 'logo' ? '110 110 500 500' : undefined
+                    }
+                  />
+                ) : project.iconBrand ? (
+                  <BrandIcon name={project.iconBrand} size={16} />
+                ) : (
+                  <SvgIcon name="logo" size={16} />
+                )}
+              </span>
+              <span class="project-copy">
+                <span class="project-name">{project.title}</span>
+                <span class="project-separator" aria-hidden="true">
+                  {' '}
+                  ~{' '}
+                </span>
+                <span class="project-summary">{project.summary}</span>
+              </span>
+              <span class="project-meta" aria-hidden="true">
+                <span class="project-resting-meta">
+                  <Icon name="arrow-up-right" size={16} class="project-arrow" />
+                </span>
+                <span class="project-destination">
+                  <span>
+                    {new URL(project.link).hostname.replace(/^www\./, '')}
+                  </span>
+                  <Icon name="arrow-up-right" size={16} />
+                </span>
+              </span>
+            </a>
           </li>
-        );
-      })
-    }
-  </ul>
-
-  <div class="project-more">
-    <h3 class="project-more__heading">More projects.</h3>
-    <ul class="project-mini-grid">
-      {
-        rest.map(({ title, description, tech, link }, index) => {
-          const accent = MINI_ACCENT[index % MINI_ACCENT.length];
-          return (
-            <li class="project-mini" style={`--card-accent:${accent}`}>
-              <a
-                class="project-mini__link"
-                href={link}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <span class="project-mini__title">
-                  {title}
-                  <Icon name="arrow-up-right" size={17} />
-                </span>
-                <span class="project-mini__desc">{description}</span>
-                <span class="project-mini__tags">
-                  {tech.map((t) => (
-                    <span class="project-tag">{t}</span>
-                  ))}
-                </span>
-              </a>
-            </li>
-          );
-        })
-      }
-    </ul>
-  </div>
-</section>
+        ))}
+      </ul>
+    </section>
+  ))
+}

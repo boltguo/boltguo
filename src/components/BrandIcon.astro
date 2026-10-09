@@ -1,0 +1,26 @@
+---
+import { brands, type BrandName } from '../data/brands';
+
+interface Props {
+  name: BrandName;
+  size?: number;
+  labelled?: boolean;
+}
+
+const { name, size = 18, labelled = false } = Astro.props;
+const { icon, label } = brands[name];
+---
+
+<svg
+  class="brand-icon"
+  width={size}
+  height={size}
+  viewBox="0 0 24 24"
+  fill={`#${icon.hex}`}
+  role={labelled ? 'img' : undefined}
+  aria-label={labelled ? label : undefined}
+  aria-hidden={labelled ? undefined : 'true'}
+  focusable="false"
+>
+  <path d={icon.path}></path>
+</svg>

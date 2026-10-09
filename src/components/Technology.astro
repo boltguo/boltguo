@@ -1,0 +1,15 @@
+---
+import BrandIcon from './BrandIcon.astro';
+import { brands, type BrandName } from '../data/brands';
+
+interface Props {
+  name: BrandName;
+}
+
+const { name } = Astro.props;
+---
+
+<strong class="inline-tech">
+  <BrandIcon name={name} size={16} />
+  <span>{brands[name].label}</span>
+</strong>

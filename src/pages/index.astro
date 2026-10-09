@@ -1,87 +1,35 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/home/Hero.astro';
-import BrushBand from '../components/home/BrushBand.astro';
-import StoryBlock from '../components/home/StoryBlock.astro';
 import Projects from '../components/home/Projects.astro';
 import HomeFooter from '../components/home/Footer.astro';
-import BackToTop from '../components/BackToTop.astro';
+import Icon from '../components/Icon.astro';
+import SvgIcon from '../components/SvgIcon.astro';
 ---
 
 <Layout
   title="Bolt Guo | Software developer"
-  description="Bolt Guo is a software developer who enjoys exploring new tools and technologies. Browse personal projects, learning tools, and experiments."
+  description="I'm Bolt Guo, a software developer with a frontend background. I build projects to explore ideas and learn how things work."
 >
-  <div class="paper-page text-[var(--ink)]">
-    <main class="viz-main">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="site-logo" href="/" aria-label="AOUOS home">
+        <SvgIcon name="logo" size={36} />
+      </a>
+      <a
+        class="header-github"
+        href="https://github.com/boltguo"
+        target="_blank"
+        rel="noreferrer"
+      >
+        GitHub <Icon name="arrow-up-right" size={16} />
+      </a>
+    </header>
+    <main id="main" tabindex="-1">
       <Hero />
-
-      {/* --- Chapter 1: origin --------------------------------------- */}
-      <BrushBand
-        color="var(--canvas-blue)"
-        title="How I build"
-        outline="#1f1b16"
-        id="story"
-      />
-
-      <StoryBlock
-        eyebrow="How I learn"
-        title="Learning through projects."
-        sketch="learn"
-        accent="var(--canvas-blue)"
-      >
-        <p>
-          I like having something I can try while learning. In VizLearn, that
-          means changing an input and following the code and visualization one
-          step at a time.
-        </p>
-        <p>
-          My React and Vue learning projects take a similar approach, with
-          examples to run and explore.
-        </p>
-      </StoryBlock>
-
-      <StoryBlock
-        eyebrow="What interests me"
-        title="Exploring new tools."
-        sketch="ship"
-        flip
-        accent="var(--canvas-lilac)"
-      >
-        <p>
-          I enjoy trying new tools and technologies, seeing how they work, and
-          finding ways to use them in my projects.
-        </p>
-        <p>
-          Some of those experiments become projects I share here, from learning
-          tools to small everyday utilities.
-        </p>
-      </StoryBlock>
-
-      {/* --- Chapter 2: the work ------------------------------------- */}
-      <BrushBand
-        color="var(--canvas-lilac)"
-        title="What I've built"
-        outline="#1f1b16"
-        id="projects"
-      />
-
       <Projects />
-
-      {/* --- Chapter 3: contact -------------------------------------- */}
-      <BrushBand
-        color="#7b8cff"
-        title="Say hello"
-        outline="#1f1b16"
-        id="contact"
-      >
-        <div class="band-cta">
-          <a class="band-btn" href="mailto:hello@aouos.com">hello@aouos.com</a>
-        </div>
-      </BrushBand>
-
-      <HomeFooter />
-      <BackToTop />
     </main>
+    <HomeFooter />
   </div>
 </Layout>

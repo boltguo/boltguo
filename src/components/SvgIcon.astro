@@ -1,0 +1,34 @@
+---
+import { svgIcons, type SvgIconName } from '../data/svg-icons';
+
+interface Props {
+  name: SvgIconName;
+  size?: number;
+  viewBox?: string;
+}
+
+const { name, size = 16, viewBox } = Astro.props;
+// Only trusted local assets are embedded. Raw imports emit no extra SVG files.
+const source = svgIcons[name].match(/<svg\b([^>]*)>([\s\S]*)<\/svg>\s*$/);
+if (!source) throw new Error(`Invalid SVG source: ${name}`);
+const sourceAttributes = Object.fromEntries(
+  [...source[1].matchAll(/([\w:-]+)\s*=\s*(['"])(.*?)\2/g)].map(
+    ([, attribute, , value]) => [attribute, value]
+  )
+);
+delete sourceAttributes.xmlns;
+delete sourceAttributes.version;
+const attributes = {
+  ...sourceAttributes,
+  class: 'svg-icon',
+  width: size,
+  height: size,
+  viewBox: viewBox ?? sourceAttributes.viewBox,
+  role: undefined,
+  'aria-label': undefined,
+  'aria-hidden': 'true',
+  focusable: 'false',
+} as const;
+---
+
+<svg {...attributes} set:html={source[2]} />

@@ -1,102 +1,47 @@
 ---
+import Technology from '../Technology.astro';
 import Icon from '../Icon.astro';
-import HeroAnya from './HeroAnya.astro';
-import HeroMiku from './HeroMiku.astro';
-import HeroTechMarks from './HeroTechMarks.astro';
+import SvgIcon from '../SvgIcon.astro';
+import BrandIcon from '../BrandIcon.astro';
 ---
 
-<section class="aouos-hero">
-  <HeroTechMarks />
-
-  <div class="hero-motion-top">
-    <canvas
-      class="sketch-canvas"
-      data-hero-motion="top"
-      width="760"
-      height="190"
-      role="img"
-      aria-label="Hand-drawn music notes, a pulsing equalizer, and ChatGPT and Claude logos"
-    ></canvas>
-    <div class="hero-miku">
-      <HeroMiku />
-    </div>
-  </div>
-
-  <div class="aouos-hero-copy">
-    <h1 class="aouos-hero-title">
-      <span class="hero-hello">Hello, I'm</span><span class="hero-name"
-        >Bolt Guo.<svg
-          class="hero-name-swash"
-          viewBox="0 0 220 24"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-        >
-          <path
-            d="M6 14 C 42 5, 80 20, 116 11 S 186 9, 214 14"
-            fill="none"
-            stroke="var(--canvas-blue)"
-            stroke-width="7"
-            stroke-linecap="round"
-            filter="url(#rough-ink)"></path>
-        </svg>
-      </span>
-    </h1>
-    <p class="viz-muted hero-intro">
-      I'm a software developer who enjoys exploring new tools and technologies.
-      I like trying things out, learning how they work, and building projects
-      along the way.
+<section class="intro" aria-labelledby="intro-title">
+  <h1 id="intro-title">I'm Bolt Guo.</h1>
+  <div class="intro-copy">
+    <p>
+      I'm a software developer who likes figuring out how things work and
+      building things I want to use. I built{' '}
+      <a href="https://vizlearn.app/" target="_blank" rel="noreferrer">
+        <SvgIcon name="vizlearn" size={16} />
+        <span>VizLearn</span><Icon name="arrow-up-right" size={12} />
+      </a> to make complex concepts easier to understand.
     </p>
-    <p class="viz-muted hero-intro hero-intro--aside">
-      Outside of that, I'm usually playing games, watching anime, or adding to a
-      playlist that's already too long.
+    <p>
+      My background is in frontend development. I mostly work with{' '}
+      <Technology name="typescript" />,{' '}
+      <Technology name="react" />, and <Technology name="vue" />. Lately, I've
+      been exploring native apps, local-first software, and{' '}
+      <span class="inline-detail">
+        <BrandIcon name="claude" size={16} />
+        <span>AI agents</span>
+      </span>.
     </p>
-
-    <div class="hero-tags">
-      <span class="project-tag">Software development</span>
-      <span class="project-tag">New tools & tech</span>
-      <span class="project-tag">Personal projects</span>
-    </div>
-
-    <div class="hero-cta">
-      <a class="band-btn band-btn--primary" href="#projects">
-        See my work
-        <Icon name="arrow-down" size={17} />
-      </a>
-      <a class="band-btn" href="#story">How I build</a>
-    </div>
+    <p>
+      Away from the keyboard, I'm usually playing{' '}
+      <span class="inline-detail">
+        <span class="inline-emoji" aria-hidden="true">🎮</span>
+        <span>games</span>
+      </span>, watching anime, or adding another song to a{' '}
+      <span class="inline-detail">
+        <span class="inline-emoji" aria-hidden="true">🎵</span>
+        <span>playlist</span>
+      </span> that's already too long.
+    </p>
+    <p class="intro-contact" id="contact">
+      Have something in mind? Say hello at{' '}
+      <a class="text-link" href="mailto:hello@aouos.com">
+        <strong>hello@aouos.com</strong><Icon name="arrow-up-right" size={12} />
+      </a>.
+    </p>
   </div>
-
-  <div class="hero-sketch-pad">
-    <canvas
-      class="sketch-canvas"
-      data-hero-motion="bottom"
-      width="760"
-      height="230"
-      role="img"
-      aria-label="Hand-drawn wired game controller with TypeScript and React logos"
-    ></canvas>
-    <div class="hero-anya">
-      <HeroAnya />
-    </div>
-  </div>
-
-  <a class="hero-scroll-cue" href="#story" aria-label="Jump to how I build">
-    <span>scroll</span>
-    <svg width="16" height="30" viewBox="0 0 16 30" aria-hidden="true">
-      <g
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2.2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <path d="M8 2 C 5 7, 11 11, 8 16 L 8 22"></path>
-        <path d="M3 21 L 8 28 L 13 21"></path>
-      </g>
-    </svg>
-  </a>
 </section>
-
-<script>
-  import '../../scripts/hero-motion';
-</script>
